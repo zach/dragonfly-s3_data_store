@@ -89,7 +89,8 @@ module Dragonfly
           :aws_access_key_id => access_key_id,
           :aws_secret_access_key => secret_access_key,
           :region => region,
-          :use_iam_profile => use_iam_profile
+          :use_iam_profile => use_iam_profile,
+          :path_style => url_host =~ /s3.amazonaws.com/
         }.reject {|name, option| option.nil?})
         storage.sync_clock
         storage
