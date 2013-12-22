@@ -90,7 +90,7 @@ module Dragonfly
           :aws_secret_access_key => secret_access_key,
           :region => region,
           :use_iam_profile => use_iam_profile,
-          :path_style => url_host =~ /s3.amazonaws.com/
+          :path_style => url_host =~ /s3[-\w]*.amazonaws.com/
         }.reject {|name, option| option.nil?})
         storage.sync_clock
         storage
